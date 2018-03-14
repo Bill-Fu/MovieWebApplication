@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+
+    <title>Movier Registration</title>
+  </head>
+  <body>
+  	<br/>
+  	<div class="h1">
+  		<h1>Movier</h1>
+  	</div>
+  	<div class="h3">
+  		<h3>Sign up</h3>
+  	</div>
+
+  	<div class="form">
+	    <form id="fm-login" action="Home.html" method="post">
+	      <input type="Email" id="useremail" placeholder="Email" required />
+	      <div id="email-msg"></div>
+	      <br/>
+	      <input type="password" id="pwd" placeholder="Password" required />
+	      <div id="pwd-msg"></div> 
+	      <br/>
+	      <input type="password" id="repwd" placeholder="Retype password" required />
+	      <div id="repwd-msg"></div>
+	      <br/>
+	      <input type="checkbox" id="showPwd"> Show password 
+	      <br/><br/>
+	      <input type="submit" id="btn-submit" value="Sign Up!" />
+	    </form>
+	</div>
+
+	<script type="text/javascript">
+		(function() {
+			var pwd = document.getElementById("pwd");
+			var repwd = document.getElementById("repwd");
+			var show = document.getElementById("showPwd");
+
+			show.addEventListener("change", function() {
+			try {
+			if (show.checked)
+			{
+			   pwd.type = "text";
+				   repwd.type = "text";        		
+			}
+			else
+			{
+			   pwd.type = "password";
+				   repwd.type = "password";        		
+			}
+
+			} catch(error) {
+			alert("Cannot switch type");
+			}         
+			}, false);      
+		}());
+	</script>
+
+	<script type="text/javascript">
+		(function() {
+			var email = document.getElementById("useremail");
+			var pwd = document.getElementById("pwd");
+			var repwd = document.getElementById("repwd");
+			var btn = document.getElementById("btn-submit");
+			var email_msg = document.getElementById("email-msg");
+			var pwd_msg = document.getElementById("pwd-msg");
+			var repwd_msg = document.getElementById("repwd-msg");
+
+			btn.addEventListener("click", function() {
+				if (pwd.value != repwd.value) {
+					repwd_msg.innerHTML = "Please make sure you enter the same password!";
+				}
+				else {
+					repwd_msg.innerHTML = "";	
+				}
+
+				if (email.value == 'fuhao8235@qq.com') {
+					email_msg.innerHTML = "This email has been used, please use another email!";
+				}
+				else {
+					email_msg.innerHTML = "";
+				}
+			}, false);      
+		}());
+	</script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
